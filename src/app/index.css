@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-gray-100 : #535353;
+    --color-gray-200 : #282828;
+    --color-gray-300 : #1e1e1e;
+    --color-gray-400 : #1b1b1b;
+    --color-gray-500 : #141414;
+
+    --font-pixel: "Pixelify Sans", sans-serif;
+    --font-press-start: "Press Start 2P", system-ui;
+    --font-rubik: "Rubik", sans-serif;
+    --font-comfortaa: "Comfortaa", sans-serif;
+
+    --button-shadow:
+        0 1px 1px rgba(255, 255, 255, .1) inset,
+        0 -1px 1px rgba(0, 0, 0, .1) inset,
+        0 3px 5px rgba(0, 0, 0, .1);
+}
