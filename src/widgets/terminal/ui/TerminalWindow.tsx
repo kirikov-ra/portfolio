@@ -4,7 +4,7 @@ import { useState } from "react";
 import ToggleLanguage from "../../../shared/ui/ToggleLanguage";
 import type { Language } from "../../../shared/types";
 import CommandButton from "./CommandButton";
-import Console from "./Console";
+import Terminal from "./Terminal";
 
 const UI = {
     containerBorder: "bg-gray-500 max-w-250 w-full flex flex-col h-[90vh] rounded-[20px] p-2",
@@ -76,7 +76,7 @@ const TerminalWindow = () => {
                             Links
                         </CommandButton>
                     </div>
-                    <Console />
+                    <Terminal />
                 </div>                
             </div>
         </div>

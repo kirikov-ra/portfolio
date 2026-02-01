@@ -6,10 +6,15 @@ interface IconButtonProps {
     onClick?: (newValue: boolean) => void; 
 }
 
+const UI = {
+    container: "rounded-[20px] cursor-pointer size-13 text-white flex justify-center items-center",
+    active: "shadow-(--button-shadow) bg-gray-200",
+    default: "bg-gray-300"
+} as const;
+
+
 const IconButton = ({children, isActive, onClick} : IconButtonProps) => {
-    const Container = "rounded-[20px] cursor-pointer size-13 text-white flex justify-center items-center";
-    const Active = "shadow-(--button-shadow) bg-gray-200";
-    const NotActive = "bg-gray-300";
+
 
     const handleToggle = () => {
         if (onClick) return onClick(!isActive);
@@ -17,7 +22,7 @@ const IconButton = ({children, isActive, onClick} : IconButtonProps) => {
 
     return (
         <div 
-            className={`${Container} ${isActive ? Active : NotActive}`}
+            className={`${UI.container} ${isActive ? UI.active : UI.default}`}
             onClick={() => handleToggle()}
         >
             {children}

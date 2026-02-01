@@ -5,11 +5,15 @@ interface ToggleLanguageProps {
     onClick: (newValue: Language) => void; 
 }
 
+const UI = {
+    container: "rounded-[10px] bg-gray-500 h-11 text-white flex justify-center items-center p-1",
+    active: "shadow-(--button-shadow) bg-gray-200 rounded-[8px]",
+    default: "bg-gray-500",
+    languageButton: "px-4 h-full flex items-center cursor-pointer"
+} as const;
+
 const ToggleLanguage = ({language, onClick} : ToggleLanguageProps) => {
-    const Container = "rounded-[10px] bg-gray-500 h-11 text-white flex justify-center items-center p-1";
-    const Active = "shadow-(--button-shadow) bg-gray-200 rounded-[8px]";
-    const NotActive = "bg-gray-500";
-    const LButton = "px-4 h-full flex items-center cursor-pointer";
+
 
     const handleToggle = () => {
         if (language === 'Ru') return onClick('En');
@@ -18,15 +22,15 @@ const ToggleLanguage = ({language, onClick} : ToggleLanguageProps) => {
     
     return (
         <div 
-            className={Container}
+            className={UI.container}
         >
             <div
-                className={`${LButton} ${language === 'Ru' ? Active : NotActive}`}
+                className={`${UI.languageButton} ${language === 'Ru' ? UI.active : UI.default}`}
                 onClick={() => handleToggle()}>
                     <p>Ru</p>
             </div>
             <div
-                className={`${LButton} ${language === 'En' ? Active : NotActive}`}
+                className={`${UI.languageButton} ${language === 'En' ? UI.active : UI.default}`}
                 onClick={() => handleToggle()}>
                     <p>En</p>
             </div>

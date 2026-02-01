@@ -3,7 +3,7 @@ import Skills from "./Skills";
 
 const Container = "bg-gray-300 rounded-[10px] p-4 flex-1 mt-4 overflow-y-auto";
 
-const Console = () => {
+const Terminal = () => {
 
 
     return (
@@ -14,4 +14,4 @@ const Console = () => {
     );
 }
 
-export default Console;
+export default Terminal;
