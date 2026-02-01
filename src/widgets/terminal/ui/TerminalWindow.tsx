@@ -1,8 +1,8 @@
 import { Gamepad2, User, Volume2, VolumeX } from "lucide-react";
-import IconButton from "../../../../shared/ui/IconButton";
+import IconButton from "../../../shared/ui/IconButton";
 import { useState } from "react";
-import ToggleLanguage from "../../../../shared/ui/ToggleLanguage";
-import type { Language } from "../../../../shared/types";
+import ToggleLanguage from "../../../shared/ui/ToggleLanguage";
+import type { Language } from "../../../shared/types";
 import CommandButton from "./CommandButton";
 import Console from "./Console";
 
