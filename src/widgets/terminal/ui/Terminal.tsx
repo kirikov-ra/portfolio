@@ -3,6 +3,7 @@ import { type LogEntry } from "../../../shared/types";
 import Links from "./Links";
 import Skills from "./Skills";
 import TerminalInput from "./TerminalInput";
+import Help from "./Help";
 
 interface TerminalProps {
     content: LogEntry[];
@@ -24,8 +25,8 @@ const Terminal = ({content, onInput}: TerminalProps) => {
         return onInput(value)
     };
 
-    const handleClickHelp = () => {
-        return onInput('help');
+    const handleClickHelp = (value: string) => {
+        return onInput(value);
     }
 
     return (
@@ -45,13 +46,13 @@ const Terminal = ({content, onInput}: TerminalProps) => {
                             case 'links':
                                 return <div className={UI.content}><Links /></div>
                             case 'help':
-                                return <div className={UI.content}>/{command}</div>
+                                return <div className={UI.content}><Help onClick={handleClickHelp} /></div>
                             default:
                                 return  <div className={UI.errorMessage}>
                                             {command}: command not found
                                             <pre className={UI.helpMessage}>
                                                 Type 
-                                                "<button className={UI.button} onClick={handleClickHelp}>help</button>"  
+                                                "<button className={UI.button} onClick={() => handleClickHelp('help')}>help</button>"  
                                                 to see all available commands
                                             </pre>
                                         </div>
