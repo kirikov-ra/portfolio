@@ -2,7 +2,7 @@ import { Gamepad2, User, Volume2, VolumeX } from "lucide-react";
 import IconButton from "../../../shared/ui/IconButton";
 import { useCallback, useState } from "react";
 import ToggleLanguage from "../../../shared/ui/ToggleLanguage";
-import type { Commands, Language, LogEntry } from "../../../shared/types";
+import type { Language, LogEntry } from "../../../shared/types";
 import CommandButton from "./CommandButton";
 import Terminal from "./Terminal";
 
@@ -27,16 +27,14 @@ const TerminalWindow = () => {
     const [language, setLanguage] = useState<Language>('Ru');
     const [content, setContent] = useState<LogEntry[]>([]);
 
-    const handlePrintContent = useCallback((command: Commands) => {
+    const handlePrintContent = useCallback((command: string) => {
         setContent(prev => [
             ...prev, 
             {
                 id: crypto.randomUUID(),
                 command: command
             }
-        ])
-        
-        return ;
+        ]);
     }, []);
 
 
@@ -76,12 +74,12 @@ const TerminalWindow = () => {
                         <ToggleLanguage language={language} onClick={setLanguage}/>
                     </div>
                     <div className={UI.quickCommands}>
-                        <CommandButton onClick={handlePrintContent} command={"Portfolio"} />
-                        <CommandButton onClick={handlePrintContent} command={"Skills"} />
-                        <CommandButton onClick={handlePrintContent} command={"About"} />
-                        <CommandButton onClick={handlePrintContent} command={"Links"} />
+                        <CommandButton onClick={handlePrintContent} command={"portfolio"} />
+                        <CommandButton onClick={handlePrintContent} command={"skills"} />
+                        <CommandButton onClick={handlePrintContent} command={"about"} />
+                        <CommandButton onClick={handlePrintContent} command={"links"} />
                     </div>
-                    <Terminal content={content} />
+                    <Terminal content={content} onInput={handlePrintContent} />
                 </div>                
             </div>
         </div>

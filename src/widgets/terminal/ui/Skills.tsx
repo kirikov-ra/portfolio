@@ -1,5 +1,5 @@
 const UI = {
-    container: "font-mono leading-relaxed mb-4",
+    container: "font-mono leading-relaxed",
     title: "text-gray-100",
     mySymbol: "text-white",
     skillWrapper: "text-pink-400 ml-4",
