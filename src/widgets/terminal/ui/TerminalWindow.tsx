@@ -1,8 +1,8 @@
 import { Gamepad2, User, Volume2, VolumeX } from "lucide-react";
 import IconButton from "../../../shared/ui/IconButton";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ToggleLanguage from "../../../shared/ui/ToggleLanguage";
-import type { Language } from "../../../shared/types";
+import type { Commands, Language } from "../../../shared/types";
 import CommandButton from "./CommandButton";
 import Terminal from "./Terminal";
 
@@ -22,9 +22,27 @@ const UI = {
 
 } as const;
 
+type LogEntry = {
+    id: string;
+    command: Commands | string;
+};
+
 const TerminalWindow = () => {
     const [valueIsActive, setValueIsActive] = useState(true);
     const [language, setLanguage] = useState<Language>('Ru');
+    const [content, setContent] = useState<LogEntry[]>([]);
+
+    const handlePrintContent = useCallback((command: Commands) => {
+        setContent(prev => [
+            ...prev, 
+            {
+                id: crypto.randomUUID(),
+                command: command
+            }
+        ])
+        
+        return ;
+    }, []);
 
 
     return (
@@ -63,20 +81,12 @@ const TerminalWindow = () => {
                         <ToggleLanguage language={language} onClick={setLanguage}/>
                     </div>
                     <div className={UI.quickCommands}>
-                        <CommandButton >
-                            Portfolio
-                        </CommandButton>
-                        <CommandButton >
-                            Skills
-                        </CommandButton>
-                        <CommandButton >
-                            About
-                        </CommandButton>
-                        <CommandButton >
-                            Links
-                        </CommandButton>
+                        <CommandButton onClick={handlePrintContent} command={"Portfolio"} />
+                        <CommandButton onClick={handlePrintContent} command={"Skills"} />
+                        <CommandButton onClick={handlePrintContent} command={"About"} />
+                        <CommandButton onClick={handlePrintContent} command={"Links"} />
                     </div>
-                    <Terminal />
+                    <Terminal content={content} />
                 </div>                
             </div>
         </div>

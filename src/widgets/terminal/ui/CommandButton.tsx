@@ -1,10 +1,10 @@
 import { ChevronRight } from "lucide-react";
-import type { ReactNode } from "react";
+import type { Commands } from "../../../shared/types";
+import { memo } from "react";
 
-interface IconButtonProps {
-    children: ReactNode;
-    isActive?: boolean;
-    onClick?: (newValue: boolean) => void; 
+interface CommandButtonProps {
+    command: Commands;
+    onClick?: (value: Commands) => void; 
 }
 
 const UI = {
@@ -12,21 +12,21 @@ const UI = {
     arrow: "text-white mr-2 group-hover:text-green-400"
 } as const;
 
-const CommandButton = ({children, isActive, onClick} : IconButtonProps) => {
+const CommandButton = memo(({command, onClick} : CommandButtonProps) => {
 
     const handleToggle = () => {
-        if (onClick) return onClick(!isActive);
+        if (onClick) return onClick(command);
     }
 
     return (
         <div 
             className={UI.container}
-            onClick={() => handleToggle()}
+            onClick={handleToggle}
         >
             <ChevronRight className={UI.arrow} />
-            <p>/ {children}</p>
+            <p>/ {command}</p>
         </div>
     );
-}
+});
 
 export default CommandButton;

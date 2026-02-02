@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 
 interface IconButtonProps {
     children: ReactNode;
@@ -13,7 +13,7 @@ const UI = {
 } as const;
 
 
-const IconButton = ({children, isActive, onClick} : IconButtonProps) => {
+const IconButton = memo(({children, isActive, onClick} : IconButtonProps) => {
 
 
     const handleToggle = () => {
@@ -28,6 +28,6 @@ const IconButton = ({children, isActive, onClick} : IconButtonProps) => {
             {children}
         </div>
     );
-}
+});
 
 export default IconButton;
