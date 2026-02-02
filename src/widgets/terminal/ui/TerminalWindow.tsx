@@ -2,7 +2,7 @@ import { Gamepad2, User, Volume2, VolumeX } from "lucide-react";
 import IconButton from "../../../shared/ui/IconButton";
 import { useCallback, useState } from "react";
 import ToggleLanguage from "../../../shared/ui/ToggleLanguage";
-import type { Commands, Language } from "../../../shared/types";
+import type { Commands, Language, LogEntry } from "../../../shared/types";
 import CommandButton from "./CommandButton";
 import Terminal from "./Terminal";
 
@@ -21,11 +21,6 @@ const UI = {
     quickCommands: "flex gap-5 mt-5"
 
 } as const;
-
-type LogEntry = {
-    id: string;
-    command: Commands | string;
-};
 
 const TerminalWindow = () => {
     const [valueIsActive, setValueIsActive] = useState(true);
