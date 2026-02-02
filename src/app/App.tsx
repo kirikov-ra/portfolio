@@ -15,7 +15,7 @@ function App() {
       </main>
       <div className={UI.backgound}>
         <LiquidChrome
-          baseColor={[0, 0.1, 0]}
+          baseColor={[0.3, 0.3, 0.3]}
           speed={0.2}
           amplitude={0.3}
           interactive={false}
