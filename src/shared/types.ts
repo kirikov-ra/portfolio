@@ -12,4 +12,3 @@ export type HelpCommand = {
     command: string;
     description: string;
 };
-

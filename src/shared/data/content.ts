@@ -21,7 +21,7 @@ export const ABOUT_RU = [
     ] 
   },
   { label: "target", value: ["Продуктовые команды и стартапы"] }
-] as const;
+];
 
 export const ABOUT_EN = {
   "name": "Roman Kirikov",
@@ -40,7 +40,7 @@ export const ABOUT_EN = {
     "Code that remains readable after months"
   ],
   "target": "Product teams and startups"
-} as const;
+} ;
 
 export const SKILLS = [
   {
@@ -97,10 +97,31 @@ export const SKILLS = [
       "Responsive & Mobile-First Design"
     ]
   }
-] as const;
+];
 
 export const SOCIAL_LINKS = [
   { title: "github", url: "github.com/kirikov-ra" },
   { title: "telegram", url: "telegram.com/kirikov-ra" },
   { title: "leetcode", url: "leetcode.com/kirikov-ra" },
-] as const;
+];
+
+export const PROJECTS = [
+  {
+    id: 1, 
+    hashtag: "Fullstack", 
+    title: "Food store", 
+    description: "E-commerce платформа на React 19. Реализована корзина, фильтрация товаров через URL и интеграция с Supabase для управления остатками."
+  },
+  {
+    id: 2, 
+    hashtag: "Frontend", 
+    title: "Task Tracker", 
+    description: "Приложение для управления задачами с Realtime-обновлениями. Использовал Zod для валидации форм и оптимистичные обновления (Optimistic UI)."
+  },
+  {
+    id: 3, 
+    hashtag: "Frontend",
+    title: "Crypto Dashboard",
+    description: "Панель мониторинга крипто-активов. Сложные графики (Recharts), кастомные хуки для работы с API и продвинутая анимация на Framer Motion."
+  }
+];
