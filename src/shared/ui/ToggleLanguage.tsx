@@ -1,4 +1,4 @@
-import type { Language } from "../types";
+import type { Language } from "@/shared/types";
 
 interface ToggleLanguageProps {
     language: Language;

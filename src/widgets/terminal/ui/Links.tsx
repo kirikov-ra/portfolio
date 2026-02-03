@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "../../../shared/data/content";
+import { SOCIAL_LINKS } from "@/shared/data/content";
 
 const UI = {
     container: "font-mono leading-relaxed",

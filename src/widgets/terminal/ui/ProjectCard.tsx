@@ -1,6 +1,7 @@
-import GlareHover from "../../../shared/ui/GlareHover";
+import GlareHover from "@/shared/ui/GlareHover";
 
 type ProjectCardProps = {
+    id: number;
     hashtag: string;
     title: string;
     description: string;
@@ -13,7 +14,7 @@ const UI = {
     descriptionText: "text-sm font-rubik text-white/50 font-light mt-2"
 } as const;
 
-const ProjectCard = ({hashtag, title, description}: ProjectCardProps) => {
+const ProjectCard = ({hashtag, title, description, id}: ProjectCardProps) => {
     return (
             <GlareHover
                 glareColor="#ffffff"
@@ -23,7 +24,11 @@ const ProjectCard = ({hashtag, title, description}: ProjectCardProps) => {
                 transitionDuration={800}
                 playOnce={false}
             >
-                <button className={UI.projectItem}>
+                <button 
+                    id={`project-card-${id}`}
+                    name={`view-project-${title.toLowerCase().replace(/\s+/g, '-')}`} 
+                    className={UI.projectItem}
+                >
                     <div className={UI.hashtag}>{hashtag}</div>
                     <div className={UI.title}>{title}</div>
                     <p className={UI.descriptionText}>{description}</p>

@@ -1,4 +1,4 @@
-import { ABOUT_RU } from "../../../shared/data/content";
+import { ABOUT_RU } from "@/shared/data/content";
 
 const UI = {
     container: "font-mono leading-relaxed text-sm md:text-base",

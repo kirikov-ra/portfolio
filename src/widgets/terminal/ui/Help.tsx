@@ -1,4 +1,4 @@
-import type { HelpCommand } from "../../../shared/types";
+import type { HelpCommand } from "@/shared/types";
 
 const UI = {
     container: "font-mono gap-2 mt-4 text-white flex",

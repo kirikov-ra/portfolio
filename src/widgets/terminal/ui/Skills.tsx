@@ -1,4 +1,4 @@
-import { SKILLS } from "../../../shared/data/content";
+import { SKILLS } from "@/shared/data/content";
 
 const UI = {
     container: "font-mono leading-relaxed",

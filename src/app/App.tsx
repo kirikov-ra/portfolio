@@ -1,8 +1,8 @@
-import { LiquidChrome } from "../shared/ui/LiquidChrome/LiquidChrome";
+import LiquidChrome from "@/shared/ui/LiquidChrome";
 import TerminalWindow from "../widgets/terminal/ui/TerminalWindow"
 
 const UI = {
-    mainContent: "w-full h-screen relative z-2 p-10 flex justify-center items-center",
+    mainContent: "w-full h-screen relative z-2 md:p-10 flex justify-center items-center",
     backgound: "fixed left-0 top-0 w-full h-full z-1"
 } as const;
 

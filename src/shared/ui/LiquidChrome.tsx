@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 
-import './LiquidChrome.css';
-
 interface LiquidChromeProps extends React.HTMLAttributes<HTMLDivElement> {
   baseColor?: [number, number, number];
   speed?: number;
@@ -164,7 +162,7 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
     };
   }, [baseColor, speed, amplitude, frequencyX, frequencyY, interactive]);
 
-  return <div ref={containerRef} className="liquidChrome-container" {...props} />;
+  return <div ref={containerRef} className="w-full h-full" {...props} />;
 };
 
 export default LiquidChrome;

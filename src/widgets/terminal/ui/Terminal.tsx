@@ -1,11 +1,11 @@
 import { ChevronRight } from "lucide-react";
-import { type LogEntry } from "../../../shared/types";
+import { type LogEntry } from "@/shared/types";
 import Links from "./Links";
 import Skills from "./Skills";
 import TerminalInput from "./TerminalInput";
 import Help from "./Help";
 import About from "./About";
-import Portfolio from "./Portfolio";
+import Projects from "./Projects";
 
 interface TerminalProps {
     content: LogEntry[];
@@ -13,7 +13,7 @@ interface TerminalProps {
 }
 
 const UI = {
-    container: "font-mono bg-gray-300 rounded-[10px] p-4 flex-1 flex flex-col gap-4 mt-4 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-white/10 scrollbar-hover:scrollbar-thumb-white/30 scrollbar-active:scrollbar-thumb-white/30",
+    container: "font-mono bg-gray-300 rounded-[10px] p-4 flex-1 flex flex-col gap-4 mt-2 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-white/10 scrollbar-hover:scrollbar-thumb-white/30 scrollbar-active:scrollbar-thumb-white/30",
     lastCommand: "flex items-center text-white",
     arrow: "text-white",
     content: "ml-6",
@@ -39,8 +39,8 @@ const Terminal = ({content, onInput}: TerminalProps) => {
 
                     {(() => {
                         switch (command) {
-                            case 'portfolio':
-                                return <div className={UI.content}><Portfolio /></div>
+                            case 'projects':
+                                return <div className={UI.content}><Projects /></div>
                             case 'skills':
                                 return <div className={UI.content}><Skills /></div>
                             case 'about':

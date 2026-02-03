@@ -33,6 +33,7 @@ const TerminalInput = ({onInput}: TerminalInputProps) => {
                 placeholder="_" 
                 type="text" 
                 value={commandText} 
+                name={"terminal"}
             />
         </div>
     );
