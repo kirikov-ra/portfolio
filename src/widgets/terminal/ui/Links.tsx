@@ -1,3 +1,5 @@
+import { SOCIAL_LINKS } from "../../../shared/data/content";
+
 const UI = {
     container: "font-mono leading-relaxed",
     title: "text-gray-100",
@@ -5,12 +7,6 @@ const UI = {
     linkName: "text-sky-300 ml-4",
     link: "text-green-400 hover:text-green-300 hover:underline transition-colors cursor-pointer"
 } as const;
-
-const SOCIAL_LINKS = [
-  { title: "github", url: "github.com/kirikov-ra" },
-  { title: "telegram", url: "telegram.com/kirikov-ra" },
-  { title: "leetcode", url: "leetcode.com/kirikov-ra" },
-] as const;
 
 const Links = () => {
 

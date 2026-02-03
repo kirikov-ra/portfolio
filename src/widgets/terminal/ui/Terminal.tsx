@@ -4,6 +4,7 @@ import Links from "./Links";
 import Skills from "./Skills";
 import TerminalInput from "./TerminalInput";
 import Help from "./Help";
+import About from "./About";
 
 interface TerminalProps {
     content: LogEntry[];
@@ -42,7 +43,7 @@ const Terminal = ({content, onInput}: TerminalProps) => {
                             case 'skills':
                                 return <div className={UI.content}><Skills /></div>
                             case 'about':
-                                return <div className={UI.content}>/{command}</div>
+                                return <div className={UI.content}><About /></div>
                             case 'links':
                                 return <div className={UI.content}><Links /></div>
                             case 'help':
