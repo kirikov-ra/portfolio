@@ -1,4 +1,5 @@
 import { ABOUT_RU } from "@/shared/data/content";
+import clsx from "clsx";
 
 const UI = {
     container: "font-mono leading-relaxed text-sm md:text-base",
@@ -6,7 +7,7 @@ const UI = {
     mySymbol: "text-white",
     label: "text-pink-400 shrink-0",
     valueText: "text-sky-300",
-    wrapper: "ml-4 flex",
+    wrapper: "ml-4 flex flex-wrap",
     itemContainer: "ml-4 text-sky-300 text-wrap",
     indent: "pl-4",
     block: "block",
@@ -16,7 +17,6 @@ const UI = {
 const About = () => {
     return (
         <div className={UI.container}>
-            <p className={UI.title}>// Personal Info</p>
             <p className={UI.mySymbol}>{'{'}</p>
             
             {ABOUT_RU.map(({ label, value }, groupIndex) => {
@@ -28,12 +28,12 @@ const About = () => {
                         <span className={UI.label}>"{label}"</span>
                         <span className={UI.mySymbol}>: </span>
                         
-                        <div className={UI.itemContainer}>
+                        <div className={clsx(UI.itemContainer, isArray && "w-full")}>
                             {isArray && <span className={UI.mySymbol}>[</span>}
                             
-                            <div className={isArray ? UI.indent : UI.inline}>
+                            <ul className={isArray ? UI.indent : UI.inline}>
                                 {value.map((text, idx) => (
-                                    <div 
+                                    <li 
                                         key={idx} 
                                         className={isArray ? UI.block : UI.inline}
                                     >
@@ -41,9 +41,9 @@ const About = () => {
                                         {idx < value.length - 1 && (
                                             <span className={UI.mySymbol}>,</span>
                                         )}
-                                    </div>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
 
                             {isArray && <span className={UI.mySymbol}>]</span>}
                             {!isLastGroup && <span className={UI.mySymbol}>,</span>}
