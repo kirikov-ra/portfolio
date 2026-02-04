@@ -3,7 +3,6 @@ import clsx from "clsx";
 
 const UI = {
     container: "font-mono leading-relaxed text-sm md:text-base",
-    title: "text-gray-100",
     mySymbol: "text-white",
     label: "text-pink-400 shrink-0",
     valueText: "text-sky-300",

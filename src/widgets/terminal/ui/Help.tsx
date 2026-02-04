@@ -31,15 +31,15 @@ const Help = ({onClick} : {onClick: (value: string) => void}) => {
 
     return (
         <>
-            {HELP_COMMANDS.map(({command, description}) => {
-                return  <div className={UI.container}>
-                            <button className={UI.button} onClick={() => handleClickHelp(command)}>
-                                {command}
-                            </button>
-                            <p> - </p>
-                            {description}
-                        </div>
-            })}
+            {HELP_COMMANDS.map(({command, description}) => (
+                <div className={UI.container} key={command}>
+                    <button className={UI.button} onClick={() => handleClickHelp(command)}>
+                        {command}
+                    </button>
+                    <p> - </p>
+                    {description}
+                </div>
+            ))}
         </>
     )
 }

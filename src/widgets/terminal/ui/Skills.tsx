@@ -2,7 +2,6 @@ import { SKILLS } from "@/shared/data/content";
 
 const UI = {
     container: "font-mono leading-relaxed",
-    title: "text-gray-100",
     mySymbol: "text-white",
     skillWrapper: "text-pink-400 ml-4",
     skillItem: "ml-4 text-sky-300"
@@ -12,7 +11,6 @@ const Skills = () => {
 
     return (
         <div className={UI.container}>
-            <p className={UI.title}>// Skills</p>
             <p className={UI.mySymbol}>{'{'}</p>
 
             {SKILLS.map(({title, skills}, index) => (

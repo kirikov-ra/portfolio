@@ -17,7 +17,7 @@ const UI = {
     hr: "h-[2px] bg-gray-300 border-t-[1px] border-t-gray-500 border-b-[1px] border-b-gray-200 w-12",
     rightPanel: "w-full flex flex-1 min-h-0 min-w-0 flex-col",
     header: "w-full flex justify-between",
-    nickname: "font-pixel text-white bg-gray-500 px-8 h-11 rounded-[10px] flex justify-center items-center",
+    nickname: "font-pixel text-white bg-gray-500 w-32 sm:w-38 h-11 rounded-[10px] flex justify-center items-center",
     quickCommands: "rounded-[10px] flex gap-5 py-2 mt-3 min-w-0 w-full overflow-x-auto scrollbar scrollbar-track-transparent scrollbar-thumb-white/10",
     dotsAndMenu: "flex justify-between items-center",
     menuIcon: "text-gray-100 mr-2 md:hidden"
@@ -27,8 +27,10 @@ const TerminalWindow = () => {
     const [valueIsActive, setValueIsActive] = useState(true);
     const [language, setLanguage] = useState<Language>('Ru');
     const [content, setContent] = useState<LogEntry[]>([]);
+    const [logoText, setLogoText] = useState("kirikov.tech")
 
     const handlePrintContent = useCallback((command: string) => {
+        if (command === 'clear') return setContent([]);
         setContent(prev => [
             ...prev, 
             {
@@ -38,6 +40,15 @@ const TerminalWindow = () => {
         ]);
     }, []);
 
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText("kirikov.tech");
+            setLogoText("Скопировано");
+            setTimeout(() => {setLogoText("kirikov.tech")}, 2000);
+        } catch (err) {
+            console.error("Ошибка при копировании: ",err);
+        }
+    }
 
     return (
         <div className={UI.containerBorder}>
@@ -72,8 +83,11 @@ const TerminalWindow = () => {
                 </div>
                 <div className={UI.rightPanel}>
                     <div className={UI.header}>
-                        <div className={UI.nickname}>
-                            <p>kirikov.tech</p>
+                        <div 
+                            className={UI.nickname}
+                            onClick={handleCopy}
+                        >
+                            <p>{logoText}</p>
                         </div>
                         <ToggleLanguage language={language} onClick={setLanguage}/>
                     </div>
