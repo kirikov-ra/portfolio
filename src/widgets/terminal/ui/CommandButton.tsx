@@ -8,7 +8,7 @@ interface CommandButtonProps {
 }
 
 const UI = {
-    container: "font-mono text-sm md:text-base rounded-[10px] group cursor-pointer max-w-40 md:max-w-48 w-full h-12 sm:h-13 px-3 sm:px-4 text-white text-nowrap flex flex-nowrap items-center bg-gray-300 hover:shadow-(--button-shadow) hover:bg-gray-200",
+    container: "font-mono text-sm md:text-base rounded-[10px] group cursor-pointer max-w-40 md:max-w-48 w-full h-12 sm:h-13 px-3 sm:px-4 text-white text-nowrap flex flex-nowrap items-center bg-gray-300 shadow-(--button-shadow) hover:bg-gray-200",
     arrow: "text-white mr-px sm:mr-2 group-hover:text-green-400"
 } as const;
 

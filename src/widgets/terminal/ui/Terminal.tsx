@@ -18,7 +18,7 @@ const UI = {
     arrow: "text-white",
     content: "ml-6",
     errorMessage: "text-red-500 flex flex-col ml-6",
-    helpMessage: "text-white",
+    helpMessage: "text-white text-wrap",
     button: "text-green-400 cursor-pointer"
 } as const;
 
