@@ -7,8 +7,8 @@ interface IconButtonProps {
 }
 
 const UI = {
-    container: "rounded-[16px] md:rounded-[20px] cursor-pointer size-11 md:size-13 text-white flex justify-center items-center",
-    active: "shadow-(--button-shadow) bg-gray-200",
+    container: "rounded-[16px] md:rounded-[20px] cursor-pointer shadow-(--button-shadow) size-11 md:size-13 text-white flex justify-center items-center",
+    active: "bg-gray-200",
     default: "bg-gray-300"
 } as const;
 

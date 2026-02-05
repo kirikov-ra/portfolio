@@ -6,6 +6,7 @@ import type { Language, LogEntry } from "@/shared/types";
 import CommandButton from "./CommandButton";
 import Terminal from "./Terminal";
 import clsx from "clsx";
+import MobileMenu from "@/shared/ui/MobileMenu";
 
 const DOMAIN_NAME = "kirikov.tech";
 
@@ -33,6 +34,7 @@ const TerminalWindow = () => {
     const [language, setLanguage] = useState<Language>('Ru');
     const [content, setContent] = useState<LogEntry[]>([]);
     const [logoText, setLogoText] = useState(DOMAIN_NAME)
+    const [menuIsActive, setMenuIsActive] = useState(false)
 
     const handlePrintContent = useCallback((command: string) => {
         if (command === 'clear') return setContent([]);
@@ -53,6 +55,10 @@ const TerminalWindow = () => {
         } catch (err) {
             console.error("Ошибка при копировании: ",err);
         }
+    }
+
+    const handleMenuOpen = async () => {
+        setMenuIsActive(prev => !prev)
     }
 
     return (
@@ -96,13 +102,17 @@ const TerminalWindow = () => {
                         >
                             <p>{logoText}</p>
                         </div>
-                        <div className={UI.mobileMenuButton}>
+                        <div 
+                            className={UI.mobileMenuButton}
+                            onClick={handleMenuOpen}
+                        >
                             <Menu className={UI.menuIcon} />
                         </div>
                         <div className={UI.toggleLanguage}>
                             <ToggleLanguage language={language} onClick={setLanguage}/>
                         </div>
                     </div>
+                    <MobileMenu isActive={menuIsActive} language={language} setLanguage={setLanguage} />
                     <div className={UI.quickCommands}>
                         <CommandButton onClick={handlePrintContent} command={"projects"} />
                         <CommandButton onClick={handlePrintContent} command={"skills"} />
