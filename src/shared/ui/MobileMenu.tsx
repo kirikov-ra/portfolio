@@ -14,7 +14,7 @@ const VOL_STEPS = [0, 25, 50, 75, 100] as const;
 const DEFAULT_VOLUME = 25;
 
 const UI = {
-    container: "mt-4 rounded-[10px] grid grid-col-1 overflow-hidden gap-2 mt-2 transition-all duration-500 ease-in-out",
+    container: "rounded-[10px] grid grid-col-1 overflow-hidden gap-2 mt-2 transition-all duration-500 ease-in-out",
     modSelect: "flex gap-2",
     modButton: "flex gap-1 text-white h-13 flex-1 justify-center items-center shadow-(--button-shadow) bg-gray-300 rounded-[10px]",
     activeButton: "bg-gray-200",

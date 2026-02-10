@@ -101,8 +101,7 @@ export const SKILLS = [
 
 export const SOCIAL_LINKS = [
   { title: "github", url: "github.com/kirikov-ra" },
-  { title: "telegram", url: "telegram.com/kirikov-ra" },
-  { title: "leetcode", url: "leetcode.com/kirikov-ra" },
+  { title: "telegram", url: "t.me/kirikov_ra" }
 ];
 
 export const PROJECTS = [
